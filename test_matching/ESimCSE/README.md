@@ -16,11 +16,11 @@ ESimCSE通过对输入句子进行**词重复(Word Repetition)** 缓解这一问
 通过随机复制句子里的一些词，生成更多的负例对。例如“I like this apple because it looks so fresh and I think it should be delicious.”，经过处理可以表示成“I **I** like this apple apple because it looks **looks** so fresh **fresh** and I think it should be delicious *delicious*.”
 给定一个句子，经过分词处理后得到子序列，$x=\{x_1,x_2,\cdots, x_N\}$，$N$是句子的长度。定义需要重复的token长度：
 
-$$dup\_len\in [0,max(2, int(dup_rate * N))]$$
+$$duplen\in [0,max(2, int(duprate * N))]$$
 
 dup_rate是表示最大重复率的超参，dup_len是上述区间里的随机值。之后通过均匀分布选择居中dup_len个数的词进行重复操作，组成dup_set集合：
 
-$$dup\_set=uniform(range=[1,N],num=dup\_len)$$
+$$dupset=uniform(range=[1,N],num=duplen)$$
 
 原序列$x$就可以表示为$x^+=\{x_1,x_1,x_2,\cdots, x_N\}$
 
