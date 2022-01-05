@@ -34,9 +34,9 @@ $$l_i = -\log \frac{e^\frac{sim(h_i^{z_i},h_i^{z_i^\prime })}{\tau}}{\sum_{j=1}^
 alignment和uniform表示对比学习句子表示的质量。
 给定一个正例对$p_{pos}$的分布，alignment表示句子嵌入之间的预期距离，uniform衡量嵌入均匀分布的程度，$p_{data}$代表数据分布：
 
-$$l _{align}\triangleq \underset{(x,x^+) \backsim pos}{\mathbb{E}}||f(x)-f(x^+)||^2 $$
+$$l_{align}\triangleq \underset{(x,x^+) \backsim pos}{\mathbb{E}}||f(x)-f(x^+)||^2 $$
 
-$$l _{uniform} \triangleq {\underset{x,y \backsim p_{data}}{\underset{i.i.d}{\mathbb{E}}}}e^{-2||f(x)-f(y)||^2} $$
+$$l_{uniform} \triangleq {\underset{x,y \backsim p_{data}}{\underset{i.i.d}{\mathbb{E}}}} e^{-2||f(x)-f(y)||^2} $$
 
 ![图2. 对无监督SimCSE性能的评估，越靠近坐标原点表示性能越好](./img/2.png)
 
